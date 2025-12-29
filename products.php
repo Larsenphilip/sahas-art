@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection | Sahas Art</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #6c757d;
+            --accent-color: #d4a373;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --button-yellow: #FFD814;
+            --button-hover: #F7CA00;
+            --text-color: #212529;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --border-radius: 8px;
+            
+            /* Footer Variables */
+            --footer-bg: #1a1a1a;
+            --footer-text: #ffffff;
+            --footer-text-muted: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .main-content {
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-image-container {
+            width: 35%;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            max-height: 200px;
+        }
+
+        .product-details {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-tag {
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #007185;
+        }
+
+        .stars {
+            color: #FFA41C;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--button-yellow);
+            color: #0F1111;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            width: fit-content;
+            transition: background-color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+    
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 4rem 2rem 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--footer-text);
+            font-weight: 600;
+        }
+
+        .contact-info, .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--footer-text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item svg, .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--footer-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+            justify-content: flex-start;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            color: var(--footer-bg);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            color: var(--footer-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .contact-item, .social-link, .social-links {
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .social-links { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                flex-direction: column;
+            }
+            .product-image-container {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        /* Lightbox Modal Styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px; /* Keep some top padding for close button */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling inside modal if possible, let flex handle it */
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Stack image and text vertically */
+        }
+
+        .lightbox-content {
+            margin: 0 auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh; /* Leave room for text */
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin: 15px auto 0;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        @keyframes zoomIn {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Sahas Art</div>
+            <div class="nav-links">
+                <a href="index.php" class="nav-link">Home</a>
+                <a href="products.php" class="nav-link">Products</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h1 class="page-title">Featured Collection</h1>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_1.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Abstract Harmony in Blue</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(342)</span>
+                    </div>
+                    <div class="product-price">₹8,450</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_2.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Golden Sunset Valley</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(128)</span>
+                    </div>
+                    <div class="product-price">₹12,250</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_3.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Urban Chaos Theory</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>(450)</span>
+                    </div>
+                    <div class="product-price">₹6,900</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_4.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Serene Morning Light</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(89)</span>
+                    </div>
+                    <div class="product-price">₹9,999</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_5.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Vintage Portrait Study</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★☆☆</span>
+                        <span>(56)</span>
+                    </div>
+                    <div class="product-price">₹3,450</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="public/img_6.jpeg" alt="Product Image" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Geometric Patterns </h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span>(210)</span>
+                    </div>
+                    <div class="product-price">₹14,500</div>
+                    <button class="add-to-cart-btn">View</button>
+                </div>
+            </div>
+
+           
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Address Layout -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Sahas Veedu<br>Mandaveli, Chennai - 600001</span>
+                    </div>
+                    <a href="mailto:contact@sahasart.com" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>naathaansahas@gmail.com</span>
+                    </a>
+                    <a href="tel:+919876543210" class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 1.25 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>sahas oda phone number</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Layout -->
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M16.75 13.96c.25.13.36.46.24.71-.13.25-.46.36-.71.24-2.5-1.52-5.65-1.85-8.23-1.02-.26.08-.54-.06-.62-.32-.08-.26.06-.54.32-.62 2.85-.91 6.33-.56 9 1.01zm0-2.61c.25.13.36.46.24.71-.13.25-.46.36-.71.24-2.5-1.52-5.65-1.85-8.23-1.02-.26.08-.54-.06-.62-.32-.08-.26.06-.54.32-.62 2.85-.91 6.33-.56 9 1.01zm0-2.6c.25.13.36.46.24.71-.13.25-.46.36-.71.24-2.5-1.52-5.65-1.85-8.23-1.02-.26.08-.54-.06-.62-.32-.08-.26.06-.54.32-.62 2.85-.91 6.33-.56 9 1.01zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.96 14.2c-.17.29-.53.38-.82.21-2.25-1.37-5.09-1.67-8.47-1.16-.32.05-.62-.18-.67-.5-.05-.32.18-.62.5-.67 3.73-.55 6.95-.2 9.54 1.38.29.17.38.53.21.82v-.08zm.9-2.9c-.21.34-.65.45-.99.24-2.57-1.57-6.49-2.03-9.53-1.11-.38.12-.79-.09-.91-.47-.12-.38.09-.79.47-.91 3.51-1.07 7.89-.54 10.9 1.31.34.21.45.65.24.99l-.18-.05zm.1-3.07c-3.09-1.83-8.19-2-11.16-1.1-.42.12-.87-.12-1-.54-.12-.42.12-.87.54-1 3.39-1.03 9.07-.82 12.63 1.29.38.23.5.72.27 1.1-.23.38-.72.5-1.1.27l-.18-.02z"/></svg> 
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sahas Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("imageLightbox");
+            const modalImg = document.getElementById("lightboxImage");
+            const captionText = document.getElementById("lightboxCaption");
+            const closeBtn = document.getElementsByClassName("lightbox-close")[0];
+            const viewButtons = document.querySelectorAll('.add-to-cart-btn');
+
+            // Function to open modal
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Find the parent product card
+                    const card = this.closest('.product-card');
+                    // Find the image within that card
+                    const img = card.querySelector('.product-image');
+                    const title = card.querySelector('.product-title').innerText;
+                    
+                    modal.style.display = "flex";
+                    modalImg.src = img.src;
+                    captionText.innerText = title;
+                    document.body.style.overflow = "hidden"; // Prevent scrolling
+                });
+            });
+
+            // Function to close modal
+            const closeModal = () => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            };
+
+            // Close on 'x' click
+            closeBtn.onclick = closeModal;
+
+            // Close on outside click
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            };
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modal.style.display === "flex") {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
