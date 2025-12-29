@@ -47,12 +47,12 @@
                     
                     <div class="carousel-track-container">
                         <ul class="carousel-track">
-                            <li class="carousel-slide"><img src="public/img_1.jpeg" alt="Painting 1"></li>
-                            <li class="carousel-slide"><img src="public/img_2.jpeg" alt="Painting 2"></li>
-                            <li class="carousel-slide"><img src="public/img_3.jpeg" alt="Painting 3"></li>
-                            <li class="carousel-slide"><img src="public/img_4.jpeg" alt="Painting 4"></li>
-                            <li class="carousel-slide"><img src="public/img_5.jpeg" alt="Painting 5"></li>
-                            <li class="carousel-slide"><img src="public/img_6.jpeg" alt="Painting 6"></li>
+                            <li class="carousel-slide"><img src="img_1.jpeg" alt="Painting 1"></li>
+                            <li class="carousel-slide"><img src="img_2.jpeg" alt="Painting 2"></li>
+                            <li class="carousel-slide"><img src="img_3.jpeg" alt="Painting 3"></li>
+                            <li class="carousel-slide"><img src="img_4.jpeg" alt="Painting 4"></li>
+                            <li class="carousel-slide"><img src="img_5.jpeg" alt="Painting 5"></li>
+                            <li class="carousel-slide"><img src="img_6.jpeg" alt="Painting 6"></li>
                         </ul>
                     </div>
 
@@ -89,7 +89,7 @@
                     
                     <!-- Image Content -->
                     <div class="about-image-container">
-                        <img src="images/about.png" alt="Modern Art Gallery Interior" class="about-image">
+                        <img src="about.png" alt="Modern Art Gallery Interior" class="about-image">
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                 <!-- Review 1 -->
                 <div class="review-card active" data-index="0">
                     <div class="review-image-wrapper">
-                        <img src="public/img_1.jpeg" alt="Artwork by Arun Prem" class="review-image">
+                        <img src="img_1.jpeg" alt="Artwork by Arun Prem" class="review-image">
                     </div>
                     <div class="review-content">
                         <p class="review-quote">"The world has certainly changed! Having the ability to view affordable pieces from such talented artists is incredible. The piece was perfectly described, and exactly as described when it arrived! I'm so pleased and happy to own it. Saatchi Art is a wonderful resource."</p>
@@ -119,7 +119,7 @@
                 <!-- Review 2 -->
                 <div class="review-card" data-index="1">
                     <div class="review-image-wrapper">
-                        <img src="public/img_2.jpeg" alt="Artwork by Sarah J" class="review-image">
+                        <img src="img_2.jpeg" alt="Artwork by Sarah J" class="review-image">
                     </div>
                     <div class="review-content">
                         <p class="review-quote">"Absolutely stunning. The colors are even more vibrant in person. The packaging was secure and delivery was faster than expected. A true masterpiece for my living room."</p>
@@ -131,7 +131,7 @@
                 <!-- Review 3 -->
                 <div class="review-card" data-index="2">
                     <div class="review-image-wrapper">
-                        <img src="public/img_3.jpeg" alt="Artwork by David R" class="review-image">
+                        <img src="img_3.jpeg" alt="Artwork by David R" class="review-image">
                     </div>
                     <div class="review-content">
                         <p class="review-quote">"Sahas Art made the process of buying my first original painting so easy. The collection is curated beautifully, and I feel connected to the artist's story."</p>
@@ -324,5 +324,6 @@
    
 </body>
 </html>
+
 
 
