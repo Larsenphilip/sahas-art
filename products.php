@@ -395,7 +395,7 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_1.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_1.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Abstract Harmony in Blue</h3>
@@ -411,7 +411,7 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_2.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_2.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Golden Sunset Valley</h3>
@@ -427,7 +427,7 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_3.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_3.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Urban Chaos Theory</h3>
@@ -443,7 +443,7 @@
             <!-- Product 4 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_4.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_4.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Serene Morning Light</h3>
@@ -459,7 +459,7 @@
             <!-- Product 5 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_5.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_5.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Vintage Portrait Study</h3>
@@ -475,7 +475,7 @@
             <!-- Product 6 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <img src="public/img_6.jpeg" alt="Product Image" class="product-image">
+                    <img src="img_6.jpeg" alt="Product Image" class="product-image">
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Geometric Patterns </h3>
@@ -598,3 +598,4 @@
     </script>
 </body>
 </html>
+
